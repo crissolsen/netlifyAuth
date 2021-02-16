@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     createUser(data) {
-      return fetch("/.netlify/functions/auth", {
+      return fetch("https://sad-morse-5caf1d.netlify.app/.netlify/functions/auth", {
         body: JSON.stringify(data),
         method: "POST",
       }).then((response) => {
