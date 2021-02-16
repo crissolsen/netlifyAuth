@@ -12,14 +12,7 @@ exports.handler = (event, context, callback) => {
         data: data
     }
 
-        return client.query(q.Create(q.Collection("SpaceUsers"), {
-            data: {
-                email: data.userEmail 
-            }, 
-            credentials: {
-                password: data.userPassword
-            }
-        }))
+        return client.query(q.Create(q.Collection("SpaceUsers"), {data}))
         .then(res => {
             console.log("success", res)
 
