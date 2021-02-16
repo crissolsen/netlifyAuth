@@ -17,7 +17,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/auth.js"],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -41,10 +41,6 @@ export default {
     manifest: {
       lang: "en"
     }
-  },
-
-  privateRuntimeConfig: {
-    apiSecret: process.env.FAUNA_KEY
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
