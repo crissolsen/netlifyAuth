@@ -28,10 +28,8 @@ export default {
     },
     userData() {
       return {
-        data: {
           email: this.email,
-        },
-        credentials: {
+          credentials: {
           password: this.password,
         },
       };
