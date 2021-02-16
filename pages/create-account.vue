@@ -15,6 +15,7 @@ export default {
     return {
       email: "",
       password: "",
+      serverResponse: ''
     };
   },
   methods: {
@@ -23,6 +24,7 @@ export default {
         body: JSON.stringify(data),
         method: "POST",
       }).then((response) => {
+        this.serverResponse = response;
         return response.json();
       });
     },

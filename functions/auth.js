@@ -6,6 +6,7 @@ const client = new faunadb.Client({
 
 exports.handler = (event, context, callback) => {
     const data = JSON.parse(event.body)
+    
     console.log("Function user-create invoked, ", data)
 
     const newUser = {
