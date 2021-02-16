@@ -3,7 +3,7 @@
     <form>
       <input v-model="email" type="email" placeholder="email@email.com" />
       <input v-model="password" type="password" />
-      <div @click="createUser(userData(), userPass())">Submit</div>
+      <div @click="createUser(userData())">Submit</div>
     </form>
     <p>{{ email }}, {{ password }}</p>
   </div>
@@ -18,9 +18,9 @@ export default {
     };
   },
   methods: {
-    createUser(data, credentials) {
+    createUser(data) {
       return fetch("https://sad-morse-5caf1d.netlify.app/.netlify/functions/auth", {
-        body: JSON.stringify(data, credentials),
+        body: JSON.stringify(data),
         method: "POST",
       }).then((response) => {
         return response.json();
@@ -29,16 +29,12 @@ export default {
     userData() {
       return {
           data: {
-          email: this.email
+            email: this.email
+          }, 
+          credentials: {
+            password: this.password
           }
-      }
-    },
-    userPass() { 
-        return {
-            credentials: {
-          password: this.password,
-        }
-    }
+       }
     },
   },
 };
